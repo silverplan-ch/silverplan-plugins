@@ -1,0 +1,19 @@
+{
+  "name": "silverplan",
+  "owner": {
+    "name": "SilverPlan",
+    "url": "https://www.silverplan.ch"
+  },
+  "plugins": [
+    {
+      "name": "silverplan",
+      "source": "./silverplan",
+      "description": "L'agence de conseil SilverPlan dans votre assistant : un orchestrateur et sept compétences spécialisées (prévoyance, LPP, 3ᵉ pilier, hypothèque, fiscalité, succession, assurance vie) adossées à votre dossier financier et au moteur de projection suisse déterministe. Les chiffres viennent du moteur, jamais du modèle."
+    },
+    {
+      "name": "silverplan-pro",
+      "source": "./silverplan-pro",
+      "description": "L'agence SilverPlan pour les conseillers en prévoyance : un orchestrateur, les sept compétences métier appliquées au dossier de VOS clients, et les compétences du métier de conseiller (revue de portefeuille, préparation de rendez-vous, onboarding et collecte). Adossé au moteur de projection suisse déterministe : vous préparez et décidez, l'agent ne signe rien."
+    }
+  ]
+}
