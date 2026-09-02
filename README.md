@@ -46,14 +46,14 @@ Côté conseiller :
 
 ### Dans Claude (Claude Code, Cowork, claude.ai, Desktop)
 
-Depuis ce dépôt, en une commande tapée **dans la conversation Claude** (pas
-dans un terminal) :
+Deux commandes, tapées **dans la conversation Claude** (pas dans un
+terminal). D'abord, déclarez ce dépôt une fois :
 
 ```
-/plugin marketplace add <ce-depot>
+/plugin marketplace add ndengler/silverplan-plugins
 ```
 
-Puis, selon votre métier :
+Puis installez celui qui vous concerne :
 
 ```
 /plugin install silverplan@silverplan
@@ -65,8 +65,14 @@ Puis, selon votre métier :
 
 ### Depuis un fichier
 
-Les deux plugins sont aussi distribués en `.zip`. Dans Cowork : Plugins →
-installer depuis un fichier. En local, sans rien installer :
+Si vous préférez un fichier, les deux plugins se téléchargent aussi depuis le
+site :
+
+- <https://www.silverplan.ch/plugins/silverplan.zip>
+- <https://www.silverplan.ch/plugins/silverplan-pro.zip>
+
+Dans Claude : Plugins → installer depuis un fichier. Ou, après avoir cloné ce
+dépôt, sans rien installer du tout :
 
 ```bash
 claude --plugin-dir ./silverplan
@@ -118,6 +124,8 @@ il n'invente pas.
 ```
 /plugin update silverplan
 ```
+
+(ou `/plugin update silverplan-pro`)
 
 Les compétences voyagent ; les outils et votre dossier étaient déjà côté
 serveur, il n'y a rien d'autre à mettre à jour.

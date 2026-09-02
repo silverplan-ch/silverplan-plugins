@@ -1,7 +1,7 @@
 {
   "name": "silverplan",
   "displayName": "SilverPlan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "L'agence de conseil SilverPlan dans votre assistant : un orchestrateur et sept compétences spécialisées (prévoyance, LPP, 3ᵉ pilier, hypothèque, fiscalité, succession, assurance vie) adossées à votre dossier financier et au moteur de projection suisse déterministe. Les chiffres viennent du moteur, jamais du modèle.",
   "author": {
     "name": "SilverPlan",
