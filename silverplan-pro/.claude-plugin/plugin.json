@@ -1,7 +1,7 @@
 {
   "name": "silverplan-pro",
   "displayName": "SilverPlan Pro",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "L'agence SilverPlan pour les conseillers en prévoyance : un orchestrateur, les sept compétences métier appliquées au dossier de VOS clients, et les compétences du métier de conseiller (revue de portefeuille, préparation de rendez-vous, onboarding et collecte). Adossé au moteur de projection suisse déterministe : vous préparez et décidez, l'agent ne signe rien.",
   "author": {
     "name": "SilverPlan",

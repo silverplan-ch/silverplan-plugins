@@ -27,71 +27,73 @@ opportunités), **préparation de rendez-vous** (points du dossier, scénarios �
 projeter, présentation et message) et **onboarding client** (créer, inviter,
 suivre la collecte).
 
-### Quelques demandes qui marchent
+### Exemples d'interactions
 
-Côté particulier :
+Vous écrivez en français, normalement. L'agent choisit lui-même le spécialiste
+et les outils.
 
-- « Je peux prendre ma retraite à 62 ans ? »
-- « Voici mon certificat LPP. » (déposez le PDF : les valeurs entrent au dossier avec leur source)
-- « Et si j'achetais un appartement à 700 000 avant ? »
-- « Qu'est-ce qu'il te manque pour être sûr ? »
+**Pour un particulier**
 
-Côté conseiller :
+| Vous demandez | Ce que vous obtenez |
+|---|---|
+| « Je peux prendre ma retraite à 62 ans ? » | Les deux trajectoires chiffrées côte à côte : capital à la retraite, capital en fin de vie, revenu mensuel, impôts |
+| « Et si j'achetais un appartement à 700 000 ? » | Les fonds propres exigés, la charge mensuelle, le taux d'effort, et si la banque suivrait |
+| « Qu'est-ce qu'il te manque pour être sûr ? » | La liste précise des champs vides de votre dossier, et pour chacun le document qui le remplirait |
+| « Voici mon certificat LPP » (PDF déposé) | Les valeurs lues et versées au dossier, chacune rattachée à sa page d'origine |
 
-- « Par quels clients devrais-je commencer cette semaine ? »
-- « Prépare mon rendez-vous de jeudi avec ce client. »
-- « Ce prospect m'a laissé ses coordonnées : mets-le en route. »
+**Pour un conseiller**
+
+| Vous demandez | Ce que vous obtenez |
+|---|---|
+| « Par quels clients commencer cette semaine ? » | Votre portefeuille trié, avec pour chacun le nombre de jours depuis la dernière mise à jour |
+| « Qu'est-ce qui cloche chez ce client ? » | Les lacunes détectées par le moteur, chiffrées — par exemple : capital décès de 0 CHF face à une hypothèque de 445 000, ou couverture invalidité à 54 % |
+| « Qui est en retard sur ses documents ? » | Pour chaque client, ce qui a été demandé, reçu, et ce qui manque encore |
+| « Prépare mon rendez-vous avec ce client » | Les points du dossier, les scénarios à projeter, un brouillon de présentation et de message |
 
 ## Installer
 
-### Dans Claude (Claude Code, Cowork, claude.ai, Desktop)
+### Dans Claude
 
-Deux commandes, tapées **dans la conversation Claude** (pas dans un
-terminal). D'abord, déclarez ce dépôt une fois :
+Fonctionne partout : Claude Code, Cowork, claude.ai et l'application de
+bureau.
+
+Tapez ces deux lignes **dans la conversation Claude** — ce sont des commandes
+de Claude, pas de votre terminal. La première déclare le dépôt, une fois pour
+toutes. La seconde installe le plugin qui vous concerne.
 
 ```
 /plugin marketplace add ndengler/silverplan-plugins
 ```
 
-Puis installez celui qui vous concerne :
-
 ```
 /plugin install silverplan@silverplan
 ```
 
+Un conseiller installe `silverplan-pro@silverplan` à la place.
+
+Si vous préférez un fichier, les deux plugins se téléchargent aussi :
+[silverplan.zip](https://www.silverplan.ch/plugins/silverplan.zip) ·
+[silverplan-pro.zip](https://www.silverplan.ch/plugins/silverplan-pro.zip).
+Dans Claude : Plugins → installer depuis un fichier.
+
+### Dans ChatGPT
+
+Paramètres → Apps & Connectors → Developer Mode → ajouter un connecteur, avec
+l'une de ces adresses :
+
 ```
-/plugin install silverplan-pro@silverplan
-```
-
-### Depuis un fichier
-
-Si vous préférez un fichier, les deux plugins se téléchargent aussi depuis le
-site :
-
-- <https://www.silverplan.ch/plugins/silverplan.zip>
-- <https://www.silverplan.ch/plugins/silverplan-pro.zip>
-
-Dans Claude : Plugins → installer depuis un fichier. Ou, après avoir cloné ce
-dépôt, sans rien installer du tout :
-
-```bash
-claude --plugin-dir ./silverplan
+https://www.silverplan.ch/api/mcp-user     (particulier)
+https://www.silverplan.ch/api/mcp-pro      (conseiller)
 ```
 
-### La connexion à votre dossier
+Vous obtenez votre dossier, le moteur de calcul et les parcours guidés. Les
+compétences spécialisées, elles, ne sont pas encore publiées sur ChatGPT.
 
-À la première utilisation d'un outil, Claude ouvre une autorisation : vous
-vous connectez avec votre compte SilverPlan. Tout est ensuite épinglé sur ce
-compte — un particulier ne voit que son dossier, un conseiller que son
-portefeuille.
+### La première fois
 
-### ChatGPT
-
-Ajoutez le connecteur en mode développeur (Paramètres → Apps & Connectors) :
-`https://www.silverplan.ch/api/mcp-user` pour un particulier,
-`https://www.silverplan.ch/api/mcp-pro` pour un conseiller. Vous obtenez les
-outils et les parcours guidés ; les compétences spécialisées ci-dessus ne
-sont pas encore publiées sur ChatGPT.
+À votre première question, Claude ou ChatGPT vous demandera de vous connecter
+à SilverPlan. C'est ce qui relie l'assistant à **votre** dossier : un
+particulier ne voit que le sien, un conseiller que son portefeuille.
 
 ## Comment c'est construit
 
@@ -121,14 +123,18 @@ il n'invente pas.
 
 ## Mise à jour
 
+Dans la conversation Claude :
+
 ```
 /plugin update silverplan
 ```
 
-(ou `/plugin update silverplan-pro`)
+(ou `silverplan-pro`.)
 
-Les compétences voyagent ; les outils et votre dossier étaient déjà côté
-serveur, il n'y a rien d'autre à mettre à jour.
+Vous ne mettez à jour que les compétences : quelques fichiers de texte. Le
+moteur de calcul et votre dossier vivent sur nos serveurs et évoluent de leur
+côté, sans que vous ayez quoi que ce soit à faire. Rien à réinstaller, rien à
+reconfigurer, et vous ne perdez aucune donnée.
 
 ---
 
