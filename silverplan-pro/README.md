@@ -1,6 +1,6 @@
-# Plugin SilverPlan Pro
+# Plugin Silverplan Pro
 
-L'agence SilverPlan pour les **conseillers en prévoyance**. Même métier que le
+L'agence Silverplan pour les **conseillers en prévoyance**. Même métier que le
 plugin client, mais appliqué au dossier de vos clients — plus les compétences
 propres au métier de conseiller.
 
@@ -11,13 +11,13 @@ votre portefeuille. Rien à ajouter à la main.
 
 | | |
 |---|---|
-| `skills/silverplan` | l'orchestrateur : fait le point et passe la main |
-| `skills/portefeuille` | revue de portefeuille : qui traiter, quels dossiers stagnent, quelles opportunités |
-| `skills/preparation-rdv` | préparer une séance : points du dossier, scénarios à projeter, présentation, message |
-| `skills/onboarding-client` | mettre un client en route : création, invitation, suivi de la collecte |
-| `skills/prevoyance` · `lpp` · `troisieme-pilier` | retraite, 2ᵉ pilier, 3ᵉ pilier |
-| `skills/hypotheque` · `fiscalite` | financement immobilier, impôts |
-| `skills/succession` · `assurance-vie` | transmission, décès et invalidité |
+| `skills/silverplan` | l'orchestrateur : fait le point, nomme les mandats et les charge par `specialist_brief` |
+
+Les mandats sont servis par le connecteur, jamais installés : les sept
+mandats métier (retraite, 2ᵉ pilier, 3ᵉ pilier, financement immobilier,
+impôts, transmission, décès et invalidité) et les trois du métier de
+conseiller (revue de portefeuille, préparation de rendez-vous, mise en route
+d'un client). `capabilities_list` rend ceux que votre rôle vous ouvre.
 
 Différence de fond avec le plugin client : chaque appel désigne le client par
 son `clientId`, l'agent produit une analyse de niveau conseiller, et **c'est le
@@ -29,7 +29,7 @@ sans sa relecture : ni email, ni présentation, ni recommandation.
 ### Claude Code / Cowork
 
 ```bash
-/plugin marketplace add ndengler/silverplan-v3
+/plugin marketplace add silverplan-ch/silverplan-plugins
 ```
 
 ```bash
@@ -42,7 +42,7 @@ Pour tester une version locale :
 claude --plugin-dir ./packages/plugin-pro
 ```
 
-L'autorisation OAuth se fait avec votre compte conseiller SilverPlan.
+L'autorisation OAuth se fait avec votre compte conseiller Silverplan.
 
 ### claude.ai (web) et Claude Desktop
 

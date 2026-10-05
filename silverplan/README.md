@@ -1,27 +1,26 @@
-# Plugin SilverPlan
+# Plugin Silverplan
 
-L'agence de conseil SilverPlan dans un assistant : un orchestrateur et sept
+L'agence de conseil Silverplan dans un assistant : un orchestrateur et sept
 compétences spécialisées, adossés au dossier financier du client et au moteur
 de projection suisse.
 
-Le plugin déclare lui-même le serveur MCP SilverPlan : l'installer branche les
+Le plugin déclare lui-même le serveur MCP Silverplan : l'installer branche les
 compétences **et** le dossier. Il n'y a pas de connecteur à ajouter à la main.
 
 ## Ce qu'il y a dedans
 
 | | |
 |---|---|
-| `skills/silverplan` | l'orchestrateur : fait le point sur le dossier et passe la main |
-| `skills/prevoyance` · `lpp` · `troisieme-pilier` | retraite, 2ᵉ pilier, 3ᵉ pilier |
-| `skills/hypotheque` · `fiscalite` | financement immobilier, impôts |
-| `skills/succession` · `assurance-vie` | transmission, prévoyance décès et invalidité |
+| `skills/silverplan` | l'orchestrateur : fait le point sur le dossier, nomme les mandats et les charge par `specialist_brief` |
 | `.claude-plugin/plugin.json` | le manifeste, dont la déclaration du serveur MCP |
 
-Les compétences disent à l'assistant **comment** se comporter dans un domaine
-(ce qu'il établit d'abord, ses frontières, quand il passe la main, quand il
-escalade vers un conseiller humain). Les **outils** — dossier, moteur de
+Les mandats (prévoyance, 2ᵉ pilier, 3ᵉ pilier, financement immobilier,
+impôts, transmission, décès et invalidité) ne sont pas installés : le serveur
+les sert à la demande, toujours à jour. Un mandat dit à l'assistant **comment**
+se comporter dans un domaine (ce qu'il établit d'abord, ses frontières, quand
+il passe la main, quand il escalade vers un conseiller humain). Les **outils** — dossier, moteur de
 projection, scénarios, extraction de documents, fiches produits — vivent sur le
-serveur SilverPlan et sont appelés par MCP. Les chiffres viennent du moteur,
+serveur Silverplan et sont appelés par MCP. Les chiffres viennent du moteur,
 jamais du modèle.
 
 ## Installer
@@ -29,7 +28,7 @@ jamais du modèle.
 ### Claude Code / Cowork
 
 ```bash
-/plugin marketplace add ndengler/silverplan-v3
+/plugin marketplace add silverplan-ch/silverplan-plugins
 ```
 
 ```bash
@@ -43,7 +42,7 @@ claude --plugin-dir ./packages/plugin
 ```
 
 À la première utilisation d'un outil, Claude ouvre l'autorisation OAuth : vous
-vous connectez avec votre compte SilverPlan, et tout est épinglé sur ce
+vous connectez avec votre compte Silverplan, et tout est épinglé sur ce
 compte-là.
 
 ### claude.ai (web) et Claude Desktop
@@ -60,7 +59,7 @@ les outils et les parcours publiés par le serveur, sans les compétences.
 
 Mode développeur → ajouter un connecteur MCP, même URL : les outils et les
 parcours, sans les compétences. Les plugins ChatGPT acceptent aussi
-compétences + MCP, mais SilverPlan n'y est pas encore publié.
+compétences + MCP, mais Silverplan n'y est pas encore publié.
 
 ## Le plugin conseiller
 
@@ -79,7 +78,7 @@ Rien ne s'édite ici : tout est généré.
 | la voix d'accueil, l'annuaire des spécialistes | `content/agents/orchestrator.md` |
 | les règles communes (honnêteté des chiffres, escalade) | `content/agents/core.md` |
 | le mandat d'un spécialiste, ses outils, ses frontières | `content/agents/specialists/<id>.md` |
-| la marque et les produits d'un partenaire | `content/packs/<client>/` |
+| les produits d'un partenaire, sa voix et ses garde-fous | la console partenaire, sans déploiement |
 
 Puis :
 

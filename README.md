@@ -52,17 +52,33 @@ et les outils.
 
 ## Installer
 
-### Dans Claude
+### Le connecteur, pour Claude et ChatGPT
 
-Fonctionne partout : Claude Code, Cowork, claude.ai et l'application de
-bureau.
-
-Tapez ces deux lignes **dans la conversation Claude** — ce sont des commandes
-de Claude, pas de votre terminal. La première déclare le dépôt, une fois pour
-toutes. La seconde installe le plugin qui vous concerne.
+Une adresse suffit :
 
 ```
-/plugin marketplace add ndengler/silverplan-plugins
+https://www.silverplan.ch/api/mcp-user     (particulier)
+https://www.silverplan.ch/api/mcp-pro      (conseiller)
+```
+
+**Claude** (web, bureau, mobile) : Customize → Connectors → Add custom
+connector, puis collez l'adresse. Sur Claude Team ou Enterprise, le
+propriétaire de l'organisation l'ajoute une fois dans Organization settings →
+Connectors, et chacun clique ensuite sur Connect.
+
+**ChatGPT** (web, abonnement payant) : activez Developer mode dans Settings →
+Security and login. Puis, dans Plugins, cliquez sur + et collez l'adresse.
+Hors formules Business et Enterprise, ChatGPT peut se limiter à la lecture du
+dossier.
+
+### Le plugin, pour Claude
+
+Le connecteur et un guide qui choisit le bon mandat, en un seul paquet.
+
+Dans Claude Code :
+
+```
+/plugin marketplace add silverplan-ch/silverplan-plugins
 ```
 
 ```
@@ -71,23 +87,27 @@ toutes. La seconde installe le plugin qui vous concerne.
 
 Un conseiller installe `silverplan-pro@silverplan` à la place.
 
-Si vous préférez un fichier, les deux plugins se téléchargent aussi :
-[silverplan.zip](https://www.silverplan.ch/plugins/silverplan.zip) ·
-[silverplan-pro.zip](https://www.silverplan.ch/plugins/silverplan-pro.zip).
-Dans Claude : Plugins → installer depuis un fichier.
+Dans claude.ai ou l'application : Customize → Plugins → Add, puis ajoutez le
+dépôt `silverplan-ch/silverplan-plugins`. Un fichier convient aussi :
+[silverplan.zip](https://www.silverplan.ch/plugins/silverplan.zip) ou
+[silverplan-pro.zip](https://www.silverplan.ch/plugins/silverplan-pro.zip),
+avec Add → Upload plugin.
 
-### Dans ChatGPT
+### Pour tout un cabinet
 
-Paramètres → Apps & Connectors → Developer Mode → ajouter un connecteur, avec
-l'une de ces adresses :
+Sur Claude Team ou Enterprise, le propriétaire de l'organisation le fait une
+fois pour tous les conseillers :
 
-```
-https://www.silverplan.ch/api/mcp-user     (particulier)
-https://www.silverplan.ch/api/mcp-pro      (conseiller)
-```
+1. Organization settings → Plugins & skills → Add → Sync from GitHub, avec
+   `silverplan-ch/silverplan-plugins`.
+2. Dans Inventory, Default access de `silverplan-pro` : Installed by default,
+   ou Required.
+3. Organization settings → Connectors → Add → Custom, avec
+   `https://www.silverplan.ch/api/mcp-pro`. Le réglage du plugin n'ajoute pas
+   le connecteur.
 
-Vous obtenez votre dossier, le moteur de calcul et les parcours guidés. Les
-compétences spécialisées, elles, ne sont pas encore publiées sur ChatGPT.
+Chaque conseiller clique ensuite sur Connect et se connecte avec son compte
+Silverplan.
 
 ### La première fois
 

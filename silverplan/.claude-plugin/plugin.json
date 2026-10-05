@@ -1,14 +1,14 @@
 {
   "name": "silverplan",
-  "displayName": "SilverPlan",
-  "version": "1.1.0",
-  "description": "L'agence de conseil SilverPlan dans votre assistant : un orchestrateur et sept compétences spécialisées (prévoyance, LPP, 3ᵉ pilier, hypothèque, fiscalité, succession, assurance vie) adossées à votre dossier financier et au moteur de projection suisse déterministe. Les chiffres viennent du moteur, jamais du modèle.",
+  "displayName": "Silverplan",
+  "version": "1.2.0",
+  "description": "The Silverplan advisory agency in your assistant: an orchestrator and seven specialist skills (pensions, LPP, 3rd pillar, mortgage, taxation, estate, life insurance) backed by your financial dossier and the deterministic Swiss projection engine. The figures come from the engine, never from the model.",
   "author": {
-    "name": "SilverPlan",
+    "name": "Silverplan",
     "url": "https://www.silverplan.ch"
   },
   "homepage": "https://www.silverplan.ch",
-  "repository": "https://github.com/ndengler/silverplan-plugins",
+  "repository": "https://github.com/silverplan-ch/silverplan-plugins",
   "license": "UNLICENSED",
   "keywords": [
     "prevoyance",
@@ -20,14 +20,7 @@
     "fiscalite"
   ],
   "skills": [
-    "skills/silverplan",
-    "skills/assurance-vie",
-    "skills/fiscalite",
-    "skills/hypotheque",
-    "skills/lpp",
-    "skills/prevoyance",
-    "skills/succession",
-    "skills/troisieme-pilier"
+    "skills/silverplan"
   ],
   "mcpServers": {
     "silverplan": {

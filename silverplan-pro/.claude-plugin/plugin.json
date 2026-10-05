@@ -1,14 +1,14 @@
 {
   "name": "silverplan-pro",
-  "displayName": "SilverPlan Pro",
-  "version": "1.1.0",
-  "description": "L'agence SilverPlan pour les conseillers en prévoyance : un orchestrateur, les sept compétences métier appliquées au dossier de VOS clients, et les compétences du métier de conseiller (revue de portefeuille, préparation de rendez-vous, onboarding et collecte). Adossé au moteur de projection suisse déterministe : vous préparez et décidez, l'agent ne signe rien.",
+  "displayName": "Silverplan Pro",
+  "version": "1.2.0",
+  "description": "The Silverplan agency for pension advisors: an orchestrator, the seven business skills applied to YOUR clients' dossiers, and the skills of the advisor's trade (portfolio review, meeting preparation, onboarding and document collection). Backed by the deterministic Swiss projection engine: you prepare and decide, the agent signs nothing.",
   "author": {
-    "name": "SilverPlan",
+    "name": "Silverplan",
     "url": "https://www.silverplan.ch"
   },
   "homepage": "https://www.silverplan.ch",
-  "repository": "https://github.com/ndengler/silverplan-plugins",
+  "repository": "https://github.com/silverplan-ch/silverplan-plugins",
   "license": "UNLICENSED",
   "keywords": [
     "prevoyance",
@@ -20,17 +20,7 @@
     "fiscalite"
   ],
   "skills": [
-    "skills/silverplan",
-    "skills/assurance-vie",
-    "skills/fiscalite",
-    "skills/hypotheque",
-    "skills/lpp",
-    "skills/onboarding-client",
-    "skills/portefeuille",
-    "skills/preparation-rdv",
-    "skills/prevoyance",
-    "skills/succession",
-    "skills/troisieme-pilier"
+    "skills/silverplan"
   ],
   "mcpServers": {
     "silverplan": {

@@ -1,0 +1,28 @@
+{
+  "name": "silverplan-pro",
+  "version": "1.2.0",
+  "description": "The Silverplan agency for pension advisors: an orchestrator, the seven business skills applied to YOUR clients' dossiers, and the skills of the advisor's trade (portfolio review, meeting preparation, onboarding and document collection). Backed by the deterministic Swiss projection engine: you prepare and decide, the agent signs nothing.",
+  "author": {
+    "name": "Silverplan",
+    "url": "https://www.silverplan.ch"
+  },
+  "homepage": "https://www.silverplan.ch",
+  "repository": "https://github.com/silverplan-ch/silverplan-plugins",
+  "license": "UNLICENSED",
+  "keywords": [
+    "prevoyance",
+    "retraite",
+    "lpp",
+    "suisse",
+    "planification-financiere",
+    "hypotheque",
+    "fiscalite"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Silverplan Pro",
+    "shortDescription": "The Silverplan agency for pension advisors: an orchestrator, the seven business skills applied to YOUR clients' dossiers, and the skills of the advisor's trade (portfolio review, meeting preparation, onboarding and document collection). Backed by the deterministic Swiss projection engine: you prepare and decide, the agent signs nothing.",
+    "developerName": "Silverplan",
+    "websiteURL": "https://www.silverplan.ch"
+  }
+}

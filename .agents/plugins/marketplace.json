@@ -1,0 +1,22 @@
+{
+  "name": "silverplan",
+  "interface": {
+    "displayName": "Silverplan"
+  },
+  "plugins": [
+    {
+      "name": "silverplan",
+      "source": {
+        "source": "local",
+        "path": "./silverplan"
+      }
+    },
+    {
+      "name": "silverplan-pro",
+      "source": {
+        "source": "local",
+        "path": "./silverplan-pro"
+      }
+    }
+  ]
+}
