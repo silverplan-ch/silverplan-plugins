@@ -8,29 +8,11 @@ Deux plugins, pour deux métiers.
 | | **SilverPlan** | **SilverPlan Pro** |
 |---|---|---|
 | Pour qui | un particulier, sur son propre dossier | un conseiller, sur le dossier de ses clients |
-| Compétences | 8 | 11 |
 | Il faut | un compte SilverPlan | un compte conseiller SilverPlan |
 
-## Ce que ça sait faire
+## Exemples d'interactions
 
-Un orchestrateur accueille, comprend le sujet, puis passe la main à la
-compétence concernée : **prévoyance** (vue d'ensemble retraite), **2ᵉ pilier**
-(certificat, rachats, rente ou capital), **3ᵉ pilier** (plafond, versement
-soutenable, économie d'impôt), **hypothèque** (fonds propres, capacité,
-amortissement), **fiscalité** (déductions ouvertes, échéances),
-**succession** (inventaire, régime matrimonial, bénéficiaires) et
-**assurance vie** (décès, invalidité, lacune du ménage).
-
-Le plugin conseiller ajoute trois compétences propres à son métier :
-**revue de portefeuille** (qui rappeler, quels dossiers stagnent, quelles
-opportunités), **préparation de rendez-vous** (points du dossier, scénarios à
-projeter, présentation et message) et **onboarding client** (créer, inviter,
-suivre la collecte).
-
-### Exemples d'interactions
-
-Vous écrivez en français, normalement. L'agent choisit lui-même le spécialiste
-et les outils.
+Vous écrivez en français. L’assistant choisit les outils adaptés à votre demande.
 
 **Pour un particulier**
 
@@ -61,21 +43,24 @@ https://www.silverplan.ch/api/mcp-user     (particulier)
 https://www.silverplan.ch/api/mcp-pro      (conseiller)
 ```
 
-**Claude** (web, bureau, mobile) : Customize → Connectors → Add custom
-connector, puis collez l'adresse. Sur Claude Team ou Enterprise, le
-propriétaire de l'organisation l'ajoute une fois dans Organization settings →
-Connectors, et chacun clique ensuite sur Connect.
+**Claude** : Customize → Connectors → Add custom connector, puis collez
+l'adresse. Ajouté une fois, le connecteur sert partout où vous utilisez Claude
+avec ce compte : web, application, mobile et Claude Code. Sur Claude Team ou
+Enterprise, le propriétaire de l'organisation l'ajoute une fois dans
+Organization settings → Connectors, et chacun clique ensuite sur Connect.
 
 **ChatGPT** (web, abonnement payant) : activez Developer mode dans Settings →
 Security and login. Puis, dans Plugins, cliquez sur + et collez l'adresse.
 Hors formules Business et Enterprise, ChatGPT peut se limiter à la lecture du
 dossier.
 
-### Le plugin, pour Claude
+Le connecteur suffit : le serveur fournit votre profil et les règles de votre
+partenaire à chaque connexion.
 
-Le connecteur et un guide qui choisit le bon mandat, en un seul paquet.
+### Le plugin, pour Claude Code
 
-Dans Claude Code :
+Pour qui préfère un paquet : le même connecteur et les instructions de l’assistant. N'installez pas le plugin en plus du connecteur, Silverplan
+apparaîtrait deux fois.
 
 ```
 /plugin marketplace add silverplan-ch/silverplan-plugins
@@ -86,28 +71,6 @@ Dans Claude Code :
 ```
 
 Un conseiller installe `silverplan-pro@silverplan` à la place.
-
-Dans claude.ai ou l'application : Customize → Plugins → Add, puis ajoutez le
-dépôt `silverplan-ch/silverplan-plugins`. Un fichier convient aussi :
-[silverplan.zip](https://www.silverplan.ch/plugins/silverplan.zip) ou
-[silverplan-pro.zip](https://www.silverplan.ch/plugins/silverplan-pro.zip),
-avec Add → Upload plugin.
-
-### Pour tout un cabinet
-
-Sur Claude Team ou Enterprise, le propriétaire de l'organisation le fait une
-fois pour tous les conseillers :
-
-1. Organization settings → Plugins & skills → Add → Sync from GitHub, avec
-   `silverplan-ch/silverplan-plugins`.
-2. Dans Inventory, Default access de `silverplan-pro` : Installed by default,
-   ou Required.
-3. Organization settings → Connectors → Add → Custom, avec
-   `https://www.silverplan.ch/api/mcp-pro`. Le réglage du plugin n'ajoute pas
-   le connecteur.
-
-Chaque conseiller clique ensuite sur Connect et se connecte avec son compte
-Silverplan.
 
 ### La première fois
 

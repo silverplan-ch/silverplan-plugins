@@ -8,12 +8,12 @@
     {
       "name": "silverplan",
       "source": "./silverplan",
-      "description": "The Silverplan advisory agency in your assistant: an orchestrator and seven specialist skills (pensions, LPP, 3rd pillar, mortgage, taxation, estate, life insurance) backed by your financial dossier and the deterministic Swiss projection engine. The figures come from the engine, never from the model."
+      "description": "The Silverplan assistant for Swiss financial planning, backed by your financial dossier and the deterministic Swiss projection engine. The engine supplies the figures."
     },
     {
       "name": "silverplan-pro",
       "source": "./silverplan-pro",
-      "description": "The Silverplan agency for pension advisors: an orchestrator, the seven business skills applied to YOUR clients' dossiers, and the skills of the advisor's trade (portfolio review, meeting preparation, onboarding and document collection). Backed by the deterministic Swiss projection engine: you prepare and decide, the agent signs nothing."
+      "description": "The Silverplan assistant for pension advisors, backed by your clients' dossiers and the deterministic Swiss projection engine. You prepare, decide and sign."
     }
   ]
 }

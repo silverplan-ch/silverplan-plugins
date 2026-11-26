@@ -1,24 +1,17 @@
 # Plugin Silverplan
 
-L'agence de conseil Silverplan dans un assistant : un orchestrateur et sept
-compétences spécialisées, adossés au dossier financier du client et au moteur
-de projection suisse.
-
-Le plugin déclare lui-même le serveur MCP Silverplan : l'installer branche les
-compétences **et** le dossier. Il n'y a pas de connecteur à ajouter à la main.
+L’assistant Silverplan s’appuie sur votre dossier financier et sur le moteur
+de projection suisse. Le plugin installe ses instructions et connecte votre
+dossier au serveur MCP Silverplan.
 
 ## Ce qu'il y a dedans
 
 | | |
 |---|---|
-| `skills/silverplan` | l'orchestrateur : fait le point sur le dossier, nomme les mandats et les charge par `specialist_brief` |
+| `skills/silverplan` | les instructions et les outils de l’assistant |
 | `.claude-plugin/plugin.json` | le manifeste, dont la déclaration du serveur MCP |
 
-Les mandats (prévoyance, 2ᵉ pilier, 3ᵉ pilier, financement immobilier,
-impôts, transmission, décès et invalidité) ne sont pas installés : le serveur
-les sert à la demande, toujours à jour. Un mandat dit à l'assistant **comment**
-se comporter dans un domaine (ce qu'il établit d'abord, ses frontières, quand
-il passe la main, quand il escalade vers un conseiller humain). Les **outils** — dossier, moteur de
+Les **outils** — dossier, moteur de
 projection, scénarios, extraction de documents, fiches produits — vivent sur le
 serveur Silverplan et sont appelés par MCP. Les chiffres viennent du moteur,
 jamais du modèle.
@@ -64,9 +57,8 @@ compétences + MCP, mais Silverplan n'y est pas encore publié.
 ## Le plugin conseiller
 
 Ce paquet est le plugin **client**. Les conseillers installent
-`silverplan-pro` (`packages/plugin-pro/`) : mêmes compétences métier appliquées
-au dossier de leurs clients, plus les compétences du métier de conseiller, sur
-la surface `/api/mcp-pro`.
+`silverplan-pro` (`packages/plugin-pro/`), qui donne accès aux outils de
+conseil et aux dossiers de leurs clients sur `/api/mcp-pro`.
 
 ## Modifier le contenu
 
@@ -75,9 +67,8 @@ Rien ne s'édite ici : tout est généré.
 | Ce que vous voulez changer | Le fichier à éditer |
 |---|---|
 | le nom, la version, la description, l'URL du serveur | `content/agents/plugin.md` |
-| la voix d'accueil, l'annuaire des spécialistes | `content/agents/orchestrator.md` |
-| les règles communes (honnêteté des chiffres, escalade) | `content/agents/core.md` |
-| le mandat d'un spécialiste, ses outils, ses frontières | `content/agents/specialists/<id>.md` |
+| la voix et le rôle de l’assistant | `content/agents/orchestrator.md` |
+| les règles communes (honnêteté des chiffres, escalade) | `content/agents/sections/` |
 | les produits d'un partenaire, sa voix et ses garde-fous | la console partenaire, sans déploiement |
 
 Puis :
@@ -89,7 +80,7 @@ npm run gen:agents
 La CI vérifie qu'aucune sortie générée n'a dérivé de sa source
 (`npm run gen:agents:check`).
 
-Guide complet — configurer, publier, vérifier : [`docs/AGENCY.md`](../../docs/AGENCY.md).
+Guide complet — configurer, publier, vérifier : [`docs/AGENT_PLATFORM.md`](../../docs/AGENT_PLATFORM.md#assistant-instructions-and-journeys).
 
 ## Vérifier que la chaîne tient
 

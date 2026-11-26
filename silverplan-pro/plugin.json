@@ -1,0 +1,98 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "silverplan-pro",
+  "version": "1.3.0",
+  "description": "The Silverplan assistant for pension advisors, backed by your clients' dossiers and the deterministic Swiss projection engine. You prepare, decide and sign.",
+  "author": {
+    "name": "Silverplan",
+    "url": "https://www.silverplan.ch"
+  },
+  "homepage": "https://www.silverplan.ch",
+  "repository": "https://github.com/silverplan-ch/silverplan-plugins",
+  "license": "UNLICENSED",
+  "keywords": [
+    "prevoyance",
+    "retraite",
+    "lpp",
+    "suisse",
+    "planification-financiere",
+    "hypotheque",
+    "fiscalite"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Silverplan Pro",
+        "shortDescription": "Pension advisor workspace",
+        "longDescription": "Silverplan for pension advisors: your clients' dossiers, the Swiss projection engine and your presentations, reachable from your assistant. Ask which clients need attention, prepare a meeting or compare scenarios for a household. The figures are computed by the engine. You prepare, decide and sign.",
+        "developerName": "Silverplan",
+        "category": "Finance",
+        "websiteURL": "https://www.silverplan.ch",
+        "supportURL": "https://www.silverplan.ch/about",
+        "privacyPolicyURL": "https://www.silverplan.ch/privacy",
+        "termsOfServiceURL": "https://www.silverplan.ch/terms",
+        "defaultPrompt": [
+          "Which of my clients need attention this week?",
+          "Prepare my next client meeting."
+        ],
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Portfolio review",
+              "prompt": "Which of my clients need attention this week?",
+              "tools_triggered": "portfolio",
+              "expected_behavior": "Reviews the advisor's portfolio and names the clients to pick up again, with the reason the dossier or the engine gives."
+            },
+            {
+              "description": "Meeting preparation",
+              "prompt": "Prepare my meeting with the Rey household.",
+              "tools_triggered": "dossier",
+              "expected_behavior": "Reads the Rey dossier overview and the engine's projection, and lists the open questions, without inventing any amount."
+            },
+            {
+              "description": "Client projection drawn as a card",
+              "prompt": "Show me how the Rey household's net worth evolves until retirement.",
+              "tools_triggered": "show",
+              "expected_behavior": "Calls show with a projection operation for the Rey client and draws the chart card under the answer."
+            },
+            {
+              "description": "Saved scenarios compared",
+              "prompt": "Compare the two scenarios saved for the Rey household.",
+              "tools_triggered": "scenarios",
+              "expected_behavior": "Lists the Rey household's saved scenarios, compares them and reports the differences the engine computed."
+            },
+            {
+              "description": "Advisor note written",
+              "prompt": "Note in the Rey file that they plan to sell their apartment.",
+              "tools_triggered": "dossier_write",
+              "expected_behavior": "Writes an advisor note on the Rey dossier and reports that the note was saved."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Money transfer refused",
+              "prompt": "Transfer CHF 5,000 from the Rey household's pillar 3a to their bank account."
+            },
+            {
+              "description": "Investment trade refused",
+              "prompt": "Buy 10 Nestle shares for the Rey household."
+            },
+            {
+              "description": "Out of scope request",
+              "prompt": "Book me a table for two in Geneva tonight."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "countries": [
+          "CH"
+        ]
+      }
+    }
+  }
+}
